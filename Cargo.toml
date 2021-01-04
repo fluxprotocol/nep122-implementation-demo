@@ -1,19 +1,16 @@
 [package]
-name = "near-contract-template"
+name = "vault-token"
 version = "0.1.0"
-authors = ["Flux Team"]
+authors = ["jasperdg <jasperdegooijer@gmail.com>"]
 edition = "2018"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-serde = { version = "*", features = ["derive"] }
-serde_json = "*"
-borsh = "*"
-near-sdk = "2.0.0"
-uint = { version = "0.8.3", default-features = false }
-wee_alloc = { version = "0.4.5", default-features = false, features = [] }
+near-sdk = { git = "https://github.com/near/near-sdk-rs.git", tag="2.3.0" }
+uint = { version = "0.8.5", default-features = false }
+serde = "1.0.118"
 
 [profile.release]
 codegen-units = 1
@@ -25,11 +22,4 @@ debug = false
 panic = "abort"
 
 [dev-dependencies]
-lazy_static = "1.4.0"
-quickcheck = "0.9"
-quickcheck_macros = "0.9"
-log = "0.4"
-env_logger = { version = "0.7.1", default-features = false }
-near-crypto = { git = "https://github.com/nearprotocol/nearcore.git" }
-near-primitives = { git = "https://github.com/nearprotocol/nearcore.git" }
-near-runtime-standalone = { git = "https://github.com/nearprotocol/nearcore.git" }
+near-sdk-sim = { git = "https://github.com/near/near-sdk-rs.git", tag="2.3.0" }

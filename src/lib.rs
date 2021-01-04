@@ -5,4 +5,9 @@
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-mod near_contract;
+#[macro_use]
+mod vault_token;
+
+#[cfg(not(target_arch = "wasm32"))]
+#[cfg(test)]
+mod tests;
